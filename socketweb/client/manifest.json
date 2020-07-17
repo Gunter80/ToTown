@@ -1,0 +1,24 @@
+  {
+
+    "name": "漫步雲端",
+    "version": "2.0",
+    "description": "網路相遇就是緣分，是什麼讓你們相遇呢？",
+    "permissions" : ["activeTab", "notifications", "alarms", "tts", "tabs"],
+    "content_scripts" : [  
+    {  
+        "matches" : ["<all_urls>"],
+        "css": ["mycss.css","bootstrap.min.css"],
+        "js" : ["/node_modules/jquery/dist/jquery.js","vue.js","/node_modules/socket.io-client/dist/socket.io.js","bootstrap.min.js","chat.js"],
+        "run_at" : "document_end"
+        
+    } ],   
+    "browser_action": {
+    	"default_icon": "favicon-32x32.png"
+	
+    },  
+    "background" : {  
+        "scripts" : ["/node_modules/socket.io-client/dist/socket.io.js","background.js"],  
+        "persistent" : true  
+    },
+    "manifest_version": 2
+  }
